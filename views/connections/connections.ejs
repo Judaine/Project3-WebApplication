@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs')%>
+    <%if(connections.length) {
+        var topicNames = [];
+        connections.forEach(connection=> {
+            topicNames.push(connection.topic);
+        });
+        var uniqueTopics = topicNames.filter((value, index, arr) => arr.indexOf(value) === index);
+        uniqueTopics.forEach(topicName => {%>
+            <h2><%= topicName%></h2>
+            <ul>
+            <%connections.forEach(connection=> {%>
+                <%if(connection.topic == topicName){%>
+                    <li><a href="/connections/<%= connection._id%>"><p><%= connection.name%></p></a></li>
+                <%}%>
+            <%});%>
+            </ul>
+        <%});%>
+    <%} else {%>
+        <p>There are no connections to display.</p>
+    <%}%>
+<%- include('../partials/footer.ejs')%>

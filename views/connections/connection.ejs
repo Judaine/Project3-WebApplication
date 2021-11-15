@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs')%>
+        <div class="body-header">
+            <span class="body-header-content"><%= connection.topic%> - <%= connection.name%></span>
+            <div class="body-header-buttons">
+                <form>
+                    <button type = "submit" formmethod = "GET" formaction = "/connections/<%= connection._id%>/edit">Edit</button>
+                    <button type = "submit" formmethod = "POST" formaction = "/connections/<%= connection._id%>?_method=DELETE">Delete</button>
+                </form>
+            </div>
+        </div>
+
+        <span class="connection-image">
+            <img src="<%= connection.image_url%>" alt="Connection Image" />
+        </span>
+        <span class="connection-info">
+                <%= connection.host_name%><br>
+                Phone Number: <%= connection.phone_number%><br>
+                Email: <a href="mailto:<%= connection.email%>"><%= connection.email%></a><br>
+                Availability: <%= connection.start_time%> - <%= connection.end_time%><br>
+        </span>
+        <span class="connection-details">
+            <b>Details</b><br>
+            <%= connection.details%>
+        </span>
+<%- include('../partials/footer.ejs')%>

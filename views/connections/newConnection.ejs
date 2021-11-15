@@ -1,0 +1,79 @@
+<%- include('../partials/header.ejs')%>
+        <form action="/connections" method = 'POST'>
+            <div class="row">
+                <div class="col-25">
+                    <label for="topic">Topic</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="topic" name="topic" placeholder="Chamber Group, Lessons, ..." required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Title</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="name" placeholder="Title" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="host_name">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="host_name" name="host_name" placeholder="David Jordan" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone_number">Phone Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-{0-9}{4}" placeholder="###-###-####">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="gastoniamusiccommunity@gmail.com" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="start_time">Availability</label>
+                </div>
+                <div class="col-75">
+                    <input type="time" id="start_time" name="start_time" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="end_time"></label>
+                </div>
+                <div class="col-75">
+                    <input type="time" id="end_time" name="end_time" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="details">Details</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="details" name="details" placeholder="........" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="image_url">Image URL</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="image_url" name="image_url" placeholder="https://image.shutterstock.com/image-photo/group-musical-instruments-including-guitar-600w-681809980.jpg" required>
+                </div>
+            </div>
+            <div class="row submit-button">
+                <input type="submit" class="form-button" value="Create Connection">
+              </div>
+        </form>
+<%- include('../partials/footer.ejs')%>
